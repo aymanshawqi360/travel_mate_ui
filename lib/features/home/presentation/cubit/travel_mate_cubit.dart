@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:travel_mate_ui/config/constants/list_category.dart';
 import 'package:travel_mate_ui/config/constants/list_hotel.dart';
 import 'package:travel_mate_ui/config/constants/list_popular_place.dart';
-import 'package:travel_mate_ui/features/home/presentation/cubit/cubit/travel_mate_state.dart';
+import 'package:travel_mate_ui/features/home/presentation/cubit/travel_mate_state.dart';
 
 class TravelMateCubit extends Cubit<TravelMateState> {
   final ListCategory listCategory;
