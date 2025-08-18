@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:travel_mate_ui/config/constants/list_popular_place.dart';
 import 'package:travel_mate_ui/features/home/presentation/cubit/travel_mate_cubit.dart';
 import 'package:travel_mate_ui/features/home/presentation/cubit/travel_mate_state.dart';
 import 'package:travel_mate_ui/features/home/presentation/widget/Popular_Place/view_list_popular_place.dart';
