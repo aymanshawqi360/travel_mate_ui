@@ -27,3 +27,5 @@ class GetPopularPlace extends TravelMateState {
 }
 
 class OnTapCategory extends TravelMateState {}
+
+class OnTapFavorite extends TravelMateState {}
