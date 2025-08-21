@@ -6,6 +6,7 @@ class AppBottomFavorite extends StatelessWidget {
   final double? minRadius;
   final Color? backgroundColor;
   final Widget? child;
+  final void Function()? onTap;
 
   const AppBottomFavorite({
     super.key,
@@ -13,18 +14,20 @@ class AppBottomFavorite extends StatelessWidget {
     this.minRadius,
     this.backgroundColor,
     this.child,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return CircleAvatar(
-      maxRadius: maxRadius ?? 27,
-      minRadius: minRadius ?? 27,
-      // radius: radius,
-      backgroundColor: HexColor(hexColor: "E7EEF3"),
-      child:
-          child ??
-          Icon(Icons.favorite_rounded, color: HexColor(hexColor: "EA240D")),
+    return GestureDetector(
+      onTap: onTap,
+      child: CircleAvatar(
+        maxRadius: maxRadius ?? 27,
+        minRadius: minRadius ?? 27,
+        // radius: radius,
+        backgroundColor: backgroundColor ?? HexColor(hexColor: "E7EEF3"),
+        child: child,
+      ),
     );
   }
 }
