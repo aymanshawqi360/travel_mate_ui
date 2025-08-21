@@ -15,8 +15,8 @@ class AppRouter {
             child: HomeScreen(),
           ),
         );
+
       default:
-        // return null;
         return MaterialPageRoute(
           builder: (_) => Scaffold(body: Text("Page not found")),
         );
