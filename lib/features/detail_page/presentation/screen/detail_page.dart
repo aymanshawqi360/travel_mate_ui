@@ -4,7 +4,7 @@ import 'package:travel_mate_ui/config/fonts/styles.dart';
 import 'package:travel_mate_ui/core/utils/app_strings.dart';
 import 'package:travel_mate_ui/core/utils/extensions.dart';
 import 'package:travel_mate_ui/core/utils/hex_color.dart';
-import 'package:travel_mate_ui/features/detail_page/presentation/widget/deatile_body.dart';
+import 'package:travel_mate_ui/features/detail_page/presentation/widget/detail_body.dart';
 import 'package:travel_mate_ui/features/detail_page/presentation/widget/detail_sliver_appbar.dart';
 
 class DetailPage extends StatelessWidget {
@@ -17,7 +17,7 @@ class DetailPage extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           DetailSliverAppbar(hotel: hotel),
-          DeatileBody(hotel: hotel),
+          DetailBody(hotel: hotel),
         ],
       ),
       bottomNavigationBar: Container(
