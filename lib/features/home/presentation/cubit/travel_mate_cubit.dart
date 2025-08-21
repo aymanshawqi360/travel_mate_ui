@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_mate_ui/config/constants/list_category.dart';
 import 'package:travel_mate_ui/config/constants/list_hotel.dart';
 import 'package:travel_mate_ui/config/constants/list_popular_place.dart';
@@ -8,6 +9,8 @@ class TravelMateCubit extends Cubit<TravelMateState> {
   final ListCategory listCategory;
   final ListHotel listHotel;
   final ListPopularPlace listPopularPlace;
+
+  static TravelMateCubit get(context) => BlocProvider.of(context);
   TravelMateCubit({
     required this.listCategory,
     required this.listHotel,
@@ -15,14 +18,10 @@ class TravelMateCubit extends Cubit<TravelMateState> {
   }) : super(TravelMateInitial());
 
   void viewListCategories() {
-    //  final response = categories;
     emit(CategoriesSuccess(listCategories: listCategory.categories));
   }
 
   void viewListHotel() {
-    // emit(CategoriesLoading());
-    // Future.delayed(Duration(seconds: 2));
-
     emit(HotelSuccess(listHotel: listHotel.hotels));
   }
 
@@ -34,5 +33,17 @@ class TravelMateCubit extends Cubit<TravelMateState> {
   void onTapCategory({required int id}) {
     index = id;
     emit(OnTapCategory());
+  }
+
+  bool isFavorite = false;
+  Set saveFavorite = {};
+  void onTapFavorite({required int id}) {
+    if (!saveFavorite.contains(id)) {
+      // isFavorite = !id;
+      saveFavorite.add(id);
+    } else {
+      saveFavorite.remove(id);
+    }
+    emit(OnTapFavorite());
   }
 }
