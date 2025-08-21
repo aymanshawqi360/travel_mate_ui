@@ -5,4 +5,5 @@ class AssetsManager {
 
   static const String notifications = "${_assetsSvg}notifications.svg";
   static const String search = "${_assetsImages}search.png";
+  static const String location = "${_assetsSvg}location.svg";
 }
